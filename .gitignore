@@ -1,0 +1,17 @@
+# Emacs backup files
+*~
+
+# Python cache
+__pycache__
+
+# Python Egg Info
+*.egg-info/
+
+# Virtual Environments
+venv/
+
+# Image files
+*.png
+
+# MacOS Metadata
+.DS_Store
