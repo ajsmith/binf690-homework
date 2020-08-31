@@ -32,29 +32,35 @@ def volume(r):
     return (4 * math.pi * r**3) / 3.0
 
 
-def dR(t):
+def drdt(t):
     k = -0.08
     return (k * 4 * math.pi * t**2)
 
-def dV(t):
+
+def dvdt(t):
     k = -0.08
     return (k * 4 * math.pi * (3 * t / (4 * math.pi))**(2 / 3))
 
 
 def main():
-    t_max = 10.50
+    t_max = 10
     dt = 0.25
     r_init = 2.5
+
     t_series = np.arange(0, t_max, dt)
-    # rt = list(euler(t_series, r_init, dr))
-    y = list(euler(t_series, volume(r_init), dV))
+    t_series = np.append(t_series, [t_max])
+    print(t_series)
+
+    y = list(euler(t_series, volume(r_init), dvdt))
     t_series = t_series[:len(y)]
-    X = np.array([t_series, y]).T
-    for x1 in X:
-        print(x1)
+    X = np.array([t_series, y])
+    # for x1 in X:
+    #     print(x1)
     fig, ax = plt.subplots()
     # x = np.array(list(evaporate()))
-    ax.plot(X[:, 0], X[:, 1], label='radius')
+    # ax.plot(X[:, 0], X[:, 1], label='radius')
+    print(X.T)
+    ax.plot(X[0, ], X[1, ], label='radius')
     ax.set_xlabel('t (secs)')
     ax.set_ylabel('V(t) (mm^3)')
     ax.set_title('Evaporation')
