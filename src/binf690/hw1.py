@@ -29,6 +29,11 @@ def euler(t_series, y_init, f):
         t_prev = t_next
 
 
+def time_series(t_final, dt, t_init=0):
+    t_series = np.arange(t_init, t_final, dt)
+    return np.append(t_series, [t_final])
+
+
 def volume(r):
     return (4 * math.pi * r**3) / 3.0
 
@@ -43,16 +48,13 @@ def dvdt(v):
 
 
 def main():
-    t_max = 10
+    t_final = 10
     dt = 0.25
     v_init = volume(2.5)
 
-    t_series = np.arange(0, t_max, dt)
-    t_series = np.append(t_series, [t_max])
-
+    t_series = time_series(t_final, dt)
     y = list(euler(t_series, v_init, dvdt))
     r = v_to_r(np.array(y))
-    t_series = t_series[:len(y)]
     X = np.array([t_series, y, r])
     print(X.T)
 
