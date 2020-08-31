@@ -61,7 +61,7 @@ def main():
     fig, ax = plt.subplots()
     ax.plot(X[0, ], X[1, ], label='Volume')
     # ax.plot(X[0, ], X[2, ], label='Radius')
-    ax.set_xlabel('t (secs)')
+    ax.set_xlabel('t (min)')
     ax.set_ylabel('V(t) (mm^3)')
     ax.set_title('Evaporation')
     ax.text(1, 20, 'At t>10min, V(t) asymptotically approaches zero')
