@@ -63,7 +63,7 @@ def main():
     ax.set_ylabel('V(t) (mm^3)')
     ax.set_title('Evaporation')
     ax.text(1, 20, 'At t>10min, V(t) asymptotically approaches zero')
-    plt.savefig('hw1.png')
+    plt.savefig('asmitl-hw1.png')
 
 
 if __name__ == '__main__':
