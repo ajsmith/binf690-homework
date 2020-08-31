@@ -37,9 +37,9 @@ def v_to_r(v):
     return (3 * v / (4 * math.pi))**(1/3)
 
 
-def dvdt(t):
+def dvdt(v):
     k = -0.08
-    return (k * 4 * math.pi * (3 * t / (4 * math.pi))**(2 / 3))
+    return (k * 4 * math.pi * v_to_r(v)**2)
 
 
 def main():
