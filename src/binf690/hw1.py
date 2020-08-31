@@ -18,37 +18,45 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def euler(t2, t1, f):
-    p = f(t2) - f(t1)
-    q = t2 - t1
-    return (p / q)
+def euler(t_series, y_init, f):
+    t_iter = iter(t_series)
+    t_prev = next(t_iter)
+    y = y_init
+    for t_next in t_iter:
+        y = y + f(t_prev) * (t_next - t_prev)
+        y = max(0, y)
+        yield y
+        t_prev = t_next
 
 
 def volume(r):
     return (4 * math.pi * r**3) / 3.0
 
 
-def evaporate():
-    t = 0
-    dt = 0.25
-    t_max = 10.1
-    k = 0.08
-    r = 2.5
-    while t < t_max:
-        yield (t, volume(r))
-        r = r + (-k * (4 * math.pi * r**2) * dt)
-        t += dt
+def dr(t):
+    k = -0.08
+    return (k * 4 * math.pi * t**2)
+
+def dV(t):
+    k = -0.08
+    return (k * 4 * math.pi * (3 * volume(t) / (4 * math.pi))**(2 / 3))
 
 
 def main():
-    # t = 0
-    # dt = 15
-    # t_max = 60 * 10
-    # ts = list(range(t, t_max, dt))
-    # xs = (euler(t, dt))
+    t_max = 10.25
+    dt = 0.25
+    r_init = 2.5
+    t_series = np.arange(0, t_max, dt)
+    # rt = list(euler(t_series, r_init, dr))
+    y = list(euler(t_series, volume(r_init), dV))
+    t_series = t_series[:len(y)]
+    # np.reshape(t_series, len(rt))
+    print(t_series.shape)
+    print(len(y))
+    # vt = map(rt, volume)
     fig, ax = plt.subplots()
-    x = np.array(list(evaporate()))
-    ax.plot(x[:,0], x[:,1])
+    # x = np.array(list(evaporate()))
+    ax.plot(t_series, y, label='radius')
     ax.set_xlabel('t (secs)')
     ax.set_ylabel('V(t) (mm^3)')
     ax.set_title('Evaporation')
