@@ -7,6 +7,10 @@ __pycache__
 # Python Egg Info
 *.egg-info/
 
+# Python distutils
+build/
+dist/
+
 # Virtual Environments
 venv/
 
