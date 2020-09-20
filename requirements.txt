@@ -1,4 +1,6 @@
 Sphinx
 flake8
+ipython
+numpydoc
 pytest
 pytest-cov
