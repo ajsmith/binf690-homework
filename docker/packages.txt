@@ -4,6 +4,7 @@ gcc
 gnuplot
 gnuplot-doc
 graphviz
+make
 man-db
 man-pages
 pandoc
