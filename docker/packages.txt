@@ -5,6 +5,7 @@ gcc
 gnuplot
 gnuplot-doc
 graphviz
+latexmk
 make
 man-db
 man-pages
