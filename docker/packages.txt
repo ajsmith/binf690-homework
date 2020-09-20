@@ -1,0 +1,13 @@
+conda
+doxygen
+gcc
+gnuplot
+gnuplot-doc
+graphviz
+man-db
+man-pages
+pandoc
+python3
+python3-devel
+unzip
+which
