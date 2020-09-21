@@ -49,17 +49,17 @@ def bisect(f, xl, xu, es, itermax):
 
 
 def main():
-    (xr, y) = bisect(dfdx, 0, 1, 0.05, 1000,)
+    (xr, y) = bisect(dfdx, 0, 1, 0.05, 1000)
     x = np.linspace(0, 1, 100)
     plt.plot(x, f(x), 'r', label='f(x)')
     plt.plot(x, dfdx(x), 'b', label='f\'(x)')
     plt.axhline(0, color='k', linestyle='--', label='y=0')
-    plt.axvline(xr, color='g', label='xr={}'.format(xr))
-    plt.plot(xr, y, 'c.', label='f\'(xr)={}'.format(xr, y))
-    plt.plot(xr, f(xr), 'm.', label='f(xr)={}'.format(xr, y))
+    plt.axvline(xr, color='k', linestyle=':', label='xr={}'.format(xr))
+    plt.plot(xr, y, 'co', label='f\'(xr)={}'.format(y))
+    plt.plot(xr, f(xr), 'mo', label='f(xr)={}'.format(f(xr)))
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.title('Problem 5.12')
+    plt.title('Bisection Method | Ea < 5%')
     plt.legend(loc='best')
     plt.savefig('hw3a.png')
 
