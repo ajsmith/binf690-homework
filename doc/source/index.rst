@@ -17,7 +17,7 @@ BINF690 Numerical Methods
     :maxdepth: 2
     :caption: Contents:
 
-    homework/index
+    homework/hw3
     implementation
 
 
