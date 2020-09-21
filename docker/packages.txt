@@ -21,6 +21,7 @@ texlive-collection-latex
 texlive-collection-latexextra
 texlive-collection-latexrecommended
 texlive-collection-mathscience
+texlive-dvipng
 texlive-fncychap
 texlive-latex
 unzip
