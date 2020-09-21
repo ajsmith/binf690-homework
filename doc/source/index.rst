@@ -18,6 +18,7 @@ BINF690 Numerical Methods
     :caption: Contents:
 
     homework/index
+    implementation
 
 
 Indices and tables
