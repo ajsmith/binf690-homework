@@ -54,4 +54,9 @@ Determine the real roots of
 (a) Graphically
 
 
-(b) Using the Newton-Raphson method to within eps_s = 0.01%.
+(b) Using the Newton-Raphson method to within :math:`\epsilon_s = 0.01\%`.
+
+..  plot::
+
+    import binf690.hw3b
+    binf690.hw3b.main()
