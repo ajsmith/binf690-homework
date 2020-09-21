@@ -41,6 +41,10 @@ the original function.
 
 Graphically, we can see the derivative has a single maximum.
 
+The approximation comes close to finding the maximum, but is slightly
+inaccurate. This is due to our acceptible error being 5%. If we
+decrease our error tolerance, the result will improve.
+
 
 Problem 6.4
 ===========
@@ -60,3 +64,10 @@ Determine the real roots of
 
     import binf690.hw3b
     binf690.hw3b.main()
+
+Graphically, we can see 3 points where the function crosses the
+x-axis, and we can eyeball the approximate values of those roots.
+
+The Newton-Raphson method yields more accurate values for the
+roots. For our initial guesses, we provide our estimations from
+graphical inspection.
