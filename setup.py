@@ -3,6 +3,7 @@ from setuptools import setup, find_packages
 entry_points = """\
 [console_scripts]
 hw1=binf690.hw1:main
+hw3a=binf690.hw3a:main
 """
 
 setup(
