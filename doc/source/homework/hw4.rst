@@ -35,18 +35,27 @@ into the original equations.
     ...    [8, 2, -2, -2],
     ...    [10, 2, 4, 4],
     ...    [12, 2, 2, 6],
-    ... ])
-    >>> a = m[:, :-1]
-    >>> b = m[:, -1]
+    ... ], dtype='float64')
+    >>> a = m[:, :-1].copy()
+    >>> b = m[:, -1].copy()
     >>> print(a)
-    [[ 8  2 -2]
-     [10  2  4]
-     [12  2  2]]
+    [[ 8.  2. -2.]
+     [10.  2.  4.]
+     [12.  2.  2.]]
     >>> print(b)
-    [-2  4  6]
+    [-2.  4.  6.]
     >>> n = a.shape[1]
 
-    >>> x = gauss_elimination(a.copy(), b.copy(), n)
+    >>> x = gauss_elimination(a, b, n)
     >>> print(x)
-
-    >>> print(a * x)
+    [ 1.5 -6.5  0.5]
+    >>> print(a)
+    [[ 8.  2. -2.]
+     [ 0. -1.  5.]
+     [ 0.  0.  4.]]
+    >>> print(b)
+    [-2.  9.  2.]
+    >>> (np.matmul(m[:, :-1], x) == m[:, -1]).all()
+    True
+    >>> np.matmul(m[:, :-1], x)
+    [-2.  4.  6.]
