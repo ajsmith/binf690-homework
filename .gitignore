@@ -11,6 +11,14 @@ __pycache__
 build/
 dist/
 
+# Archive files
+*.bz2
+*.gz
+*.tar
+*.tgz
+*.xz
+*.zip
+
 # Virtual Environments
 venv/
 
