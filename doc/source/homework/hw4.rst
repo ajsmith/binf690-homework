@@ -46,4 +46,7 @@ into the original equations.
     [-2  4  6]
     >>> n = a.shape[1]
 
-    >>> x = gauss_elimination(a, b, n)
+    >>> x = gauss_elimination(a.copy(), b.copy(), n)
+    >>> print(x)
+
+    >>> print(a * x)

@@ -56,4 +56,10 @@ def pivot(a, b, n, s, k):
 
 
 def substitute(a, b, n):
-    return None
+    print(a)
+    x = np.empty(b.shape)
+    for i in range(n):
+        i = n - i - 1
+        j = i + 1
+        x[i] = (sum(a[i, j:]) + b[i]) / a[i, i]
+    return x
