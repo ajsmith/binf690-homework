@@ -25,5 +25,8 @@ venv/
 # Image files
 *.png
 
+# Document artifacts
+*.pdf
+
 # MacOS Metadata
 .DS_Store
