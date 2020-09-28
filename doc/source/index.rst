@@ -18,6 +18,7 @@ BINF690 Numerical Methods
     :caption: Contents:
 
     homework/hw3
+    homework/hw4
     implementation
 
 

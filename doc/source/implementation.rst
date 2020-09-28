@@ -14,3 +14,6 @@ Implementation
 
 ..  literalinclude:: ../../src/binf690/numeric.py
     :caption: src/binf690/numeric.py
+
+..  literalinclude:: ../../src/binf690/gaussian.py
+    :caption: src/binf690/gaussian.py

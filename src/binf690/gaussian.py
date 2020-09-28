@@ -1,0 +1,59 @@
+"""Gaussian Elimination for solving systems of linear equations.
+
+
+Alexander Smith
+BINF690
+George Mason University
+Fall 2020
+"""
+
+import numpy as np
+from binf690.numeric import eps
+
+
+TOLERANCE = eps * 10**6
+
+
+def gauss_elimination(a, b, n, tol=TOLERANCE):
+    s = []
+    for i in range(n):
+        s.append(max(abs(e) for e in a[i]))
+    s = np.array(s)
+    eliminate(a, b, n, s, tol)
+    x = substitute(a, b, n)
+    return x
+
+
+def eliminate(a, b, n, s, tol):
+    for k in range(n - 1):
+        pivot(a, b, n, s, k)
+        if abs(a[k, k]) < tol:
+            raise ValueError(f'a[{k}, {k}] < {tol}')
+
+        for i in range(k + 1, n):
+            factor = a[i, k] / a[k, k]
+            a[i] = a[i] - factor * a[k]
+            b[i] = b[i] - factor * b[k]
+
+    i = n - 1
+    if abs(a[i, i] / s[i]) < tol:
+        raise ValueError(f'abs(a[{i}, {i}] / s[i]) < {tol}')
+
+
+def pivot(a, b, n, s, k):
+    p = k
+    big = abs(a[k, k] / s[k])
+    for i in range(k + 1, n):
+        dummy = abs(a[i, k] / s[i])
+        if dummy > big:
+            big = dummy
+            p = i
+
+    if p != k:
+        a[[k, p]] = a[[p, k]]
+        b[[k, p]] = b[[p, k]]
+        s[[k, p]] = s[[p, k]]
+
+
+def substitute(a, b, n):
+    return None
