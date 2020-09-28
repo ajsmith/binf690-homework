@@ -33,7 +33,7 @@ Solution
 
 Below is Python code demonstrating the solution. The source code for
 Gaussian Elimination, `gaussian.py`, can be found in the
-`Implementations` section. This solution uses the `NumPy` library for
+*Implementations* section. This solution uses the `NumPy` library for
 a matrix implementation.
 
     >>> import numpy as np

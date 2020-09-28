@@ -1,7 +1,6 @@
-==============
-Implementation
-==============
-
+===============
+Implementations
+===============
 
 ..  literalinclude:: ../../src/binf690/hw3a.py
     :caption: src/binf690/hw3a.py
