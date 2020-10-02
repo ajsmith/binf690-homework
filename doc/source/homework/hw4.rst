@@ -66,4 +66,4 @@ a matrix implementation.
     >>> (np.matmul(m[:, :-1], x) == m[:, -1]).all()
     True
     >>> np.matmul(m[:, :-1], x)
-    [-2.  4.  6.]
+    array([-2.,  4.,  6.])
