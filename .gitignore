@@ -11,6 +11,9 @@ __pycache__
 build/
 dist/
 
+# PyTest Coverage file
+.coverage
+
 # Archive files
 *.bz2
 *.gz
