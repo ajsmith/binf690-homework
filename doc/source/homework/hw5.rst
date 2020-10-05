@@ -47,7 +47,7 @@ Now the numeric solution. See `hw5.py` and `gradient.py` in the
 *Implementations* section for full source code and implementation
 
     >>> from binf690.hw5 import hw5
-    >>> hw5()
+    >>> hw5(init=(0.0, 0.0))
     Pass  0 x:0.000 y:0.000 h*:-0.250
     Pass  1 x:2.000 y:-3.000 h*:-0.250
     Found optima at x:2.000 y:-3.000 h*:-0.250
