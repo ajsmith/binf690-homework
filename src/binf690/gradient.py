@@ -38,8 +38,7 @@ def gradient_descent(f, dfdx, dfdy, d2fdx2, d2fdy2, d2fdxdy, init=(0, 0)):
         x = xh(h_star)
         y = yh(h_star)
         f0 = f(x, y)
-        root_guess = sqrt(x**2 + y**2) * random()
-
+        root_guess = (x + y) * random() - (x + y) * random()
 
     if H(x, y) > 0:
         if d2fdx2(x, y) > 0:
@@ -50,18 +49,6 @@ def gradient_descent(f, dfdx, dfdy, d2fdx2, d2fdy2, d2fdxdy, init=(0, 0)):
         raise ValueError('Saddlepoint')
     else:
         raise ValueError('Undefined Hessian')
-
-
-class Hessian:
-
-    def __init__(self, d2fdx2, d2fdy2, d2fdxdy):
-        self.d2fdx2 = d2fdx2
-        self.d2fdy2 = d2fdy2
-        self.d2fdxdy = d2fdxdy
-
-
-    def __call__(self, x, y):
-        return self.d2fdx2(x, y) * self.d2fdy2(x, y) - self.d2fdxdy(x, y)**2
 
 
 def x_coord_func(x0, y0, dfdx):
@@ -78,3 +65,14 @@ def g_func(f, xh, yh):
 
 def centered_fdd_func(f, dx=FDD_DX):
     return lambda x: (f(x + dx) - f(x - dx)) / (2 * dx)
+
+
+class Hessian:
+
+    def __init__(self, d2fdx2, d2fdy2, d2fdxdy):
+        self.d2fdx2 = d2fdx2
+        self.d2fdy2 = d2fdy2
+        self.d2fdxdy = d2fdxdy
+
+    def __call__(self, x, y):
+        return self.d2fdx2(x, y) * self.d2fdy2(x, y) - self.d2fdxdy(x, y)**2
