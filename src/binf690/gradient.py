@@ -41,6 +41,7 @@ def gradient_descent(f, dfdx, dfdy, d2fdx2, d2fdy2, d2fdxdy, init=(0, 0)):
         root_guess = (x + y) * random() - (x + y) * random()
 
     if H(x, y) > 0:
+        print('Hessian: {:.3f}'.format(H(x, y)))
         if d2fdx2(x, y) > 0:
             print('Has local minimum')
         elif d2fdx2(x, y) < 0:

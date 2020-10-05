@@ -51,4 +51,5 @@ Now the numeric solution. See `hw5.py` and `gradient.py` in the
     Pass  0 x:0.000 y:0.000 h*:-0.250
     Pass  1 x:2.000 y:-3.000 h*:-0.250
     Found optima at x:2.000 y:-3.000 h*:-0.250
+    Hessian: 12.000
     Has local minimum
