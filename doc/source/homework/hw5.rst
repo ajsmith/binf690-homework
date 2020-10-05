@@ -48,6 +48,10 @@ Now the numeric solution. See `hw5.py` and `gradient.py` in the
 
     >>> from binf690.hw5 import hw5
     >>> hw5()
+    Pass  0 x:0.000 y:0.000 h*:-0.250
+    Pass  1 x:2.000 y:-3.000 h*:-0.250
+    Found optima at x:2.000 y:-3.000 h*:-0.250
+    Has local minimum
 
 
 Proof for 2nd Order Derivative
@@ -63,4 +67,4 @@ Prove the expression for the 2nd order derivative:
 Solution
 --------
 
-This is a little trickier than I thought...
+Analytical solution attached (time willing)
