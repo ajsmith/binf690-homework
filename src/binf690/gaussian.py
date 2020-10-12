@@ -28,7 +28,7 @@ def gauss_elimination(a, b, n, tol=TOLERANCE):
         raise ValueError(f'Determinant near zero: {det}')
 
     x = substitute(a, b, n)
-    return x
+    return x.flatten()
 
 
 def eliminate(a, b, n, s, tol):

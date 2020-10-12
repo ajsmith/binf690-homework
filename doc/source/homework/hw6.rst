@@ -31,6 +31,8 @@ full source code.
     Y: 1.0 1.5 2.0 3.0 4.0 5.0 8.0 10.0 13.0
     Linear Regression:
     a0:-2.014  a1:1.458  R:0.956  Std. Error:1.307
+    Polynomial Regression:
+    a0:1.488  a1:-0.452  a2:0.191  R:0.997  Std. Error:0.345
 
 ..  plot::
 
