@@ -9,7 +9,6 @@ Fall 2020
 
 from math import sqrt
 
-import matplotlib.pyplot as plt
 import numpy as np
 
 from binf690.gaussian import gauss_elimination
