@@ -20,6 +20,9 @@ Implementations
 ..  literalinclude:: ../../src/binf690/gradient.py
     :caption: src/binf690/gradient.py
 
+..  literalinclude:: ../../src/binf690/interpolation.py
+    :caption: src/binf690/interpolation.py
+
 ..  literalinclude:: ../../src/binf690/numeric.py
     :caption: src/binf690/numeric.py
 

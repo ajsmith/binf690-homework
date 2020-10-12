@@ -76,9 +76,21 @@ def hw6b():
 
 def hw6b_plot():
     hw = Homework6B()
-    X = np.array(hw.X, dtype='float64')
-    Y = np.array(hw.Y, dtype='float64')
+    # X = np.array(hw.X, dtype='float64')
+    # Y = np.array(hw.Y, dtype='float64')
+    X = list(hw.X)
+    Y = list(hw.Y)
     plt.scatter(X, Y, c='k')
+    xi = 2.8
+    (yi, _) = hw.newton.predict(xi)
+    # plt.plot(X, Y, 'b')
+    plt.scatter(np.array([xi], dtype=float), np.array([yi], dtype=float), c='r')
+    X.append(xi)
+    Y.append(yi)
+    points = sorted(zip(X, Y))
+    X = np.array(list(x for (x, y) in points), dtype=float)
+    Y = np.array(list(y for (x, y) in points), dtype=float)
+    plt.plot(X, Y, 'b')
     plt.show()
     plt.savefig('asmitl-hw6b.png')
 
