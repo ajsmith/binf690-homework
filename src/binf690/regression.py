@@ -88,7 +88,7 @@ class PolynomialRegression:
 
     def assemble_equations(self):
         self.M = np.zeros((self.m + 1, self.m + 1), dtype='float64')
-        self.B = np.zeros((self.m + 1, 1), dtype='float64')
+        self.B = np.zeros((self.m + 1,), dtype='float64')
         for i in range(self.m + 1):
             for j in range(0, i + 1):
                 k = i + j
@@ -98,7 +98,7 @@ class PolynomialRegression:
 
         for i in range(self.m + 1):
             xy_sum = self.sum_powers_xy(i)
-            self.B[i, 0] = xy_sum
+            self.B[i] = xy_sum
 
         self.A = gauss_elimination(self.M.copy(), self.B.copy(), self.m + 1)
 
