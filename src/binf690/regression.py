@@ -48,17 +48,6 @@ class LinearRegression:
     def predict(self, x):
         return self.a0 + self.a1 * x
 
-    def plot(self, filename=None):
-        X = np.array(self.X)
-        Y = np.array(self.Y)
-        plt.scatter(X, Y)
-        plt.plot(X, self.predict(X), 'r')
-        plt.xlabel('X')
-        plt.ylabel('Y')
-        plt.show()
-        if filename:
-            plt.savefig(filename)
-
     def __str__(self):
         return (
             f'a0:{self.a0:.3f}'
@@ -116,17 +105,6 @@ class PolynomialRegression:
 
     def predict(self, x):
         return sum(self.A[i] * x**i for i in range(len(self.A)))
-
-    def plot(self, filename=None):
-        X = np.array(self.X)
-        Y = np.array(self.Y)
-        plt.scatter(X, Y)
-        plt.plot(X, self.predict(X), 'r')
-        plt.xlabel('X')
-        plt.ylabel('Y')
-        plt.show()
-        if filename:
-            plt.savefig(filename)
 
     def __str__(self):
         n = len(self.A)
