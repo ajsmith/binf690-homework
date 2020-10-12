@@ -45,3 +45,24 @@ Problem 18.5
 
 - Predict the value of the function at :math:`x = 2.8`.
 - Use fifth order interpolating polynomial.
+
+
+Solution
+--------
+
+Answers to problem below. See `hw6.py` and `interpolation.py` in the
+*Implementations* section for full source.
+
+import pdb; pdb.set_trace();
+
+    >>> from binf690.hw6 import hw6b
+    >>> hw6b()
+    X: 1.6 2.0 2.5 3.2 4.0 4.5
+    Y: 2.0 8.0 14.0 15.0 8.0 2.0
+    Order Polynomial: 5
+    f(2.8) ~= 19.803
+
+..  plot::
+
+    from binf690.hw6 import hw6b_plot
+    hw6b_plot()
