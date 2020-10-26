@@ -63,6 +63,9 @@ Solving for the definite integral:
 Numerical Solutions
 ~~~~~~~~~~~~~~~~~~~
 
+For full source code, see `hw7.py` and `integration.py` in the
+*Implementations* section.
+
 In comparison to the Analytical method, the Simpson and Romberg
 methods seem accurate. The Trapezoidal method has significant error
 however.

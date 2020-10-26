@@ -14,6 +14,9 @@ Implementations
 ..  literalinclude:: ../../src/binf690/hw6.py
     :caption: src/binf690/hw6.py
 
+..  literalinclude:: ../../src/binf690/hw7.py
+    :caption: src/binf690/hw7.py
+
 ..  literalinclude:: ../../src/binf690/gaussian.py
     :caption: src/binf690/gaussian.py
 
@@ -22,6 +25,9 @@ Implementations
 
 ..  literalinclude:: ../../src/binf690/interpolation.py
     :caption: src/binf690/interpolation.py
+
+..  literalinclude:: ../../src/binf690/integration.py
+    :caption: src/binf690/integration.py
 
 ..  literalinclude:: ../../src/binf690/numeric.py
     :caption: src/binf690/numeric.py
