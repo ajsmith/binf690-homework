@@ -37,13 +37,7 @@ def print_result(a, b, n, method, result):
     print(f'result={result:.3f}')
 
 
-def simp4(f=f, a=0, b=1, n=1):
-    method = 'simpson'
-    result = integral(f, a, b, n, method=method)
-    print_result(a, b, n, method, result)
-
-
-def simp5(f=f, a=0, b=1, n=1):
+def simp(f=f, a=0, b=1, n=1):
     method = 'simpson'
     result = integral(f, a, b, n, method=method)
     print_result(a, b, n, method, result)

@@ -67,17 +67,17 @@ In comparison to the Analytical method, the Simpson and Romberg
 methods seem accurate. The Trapezoidal method has significant error
 however.
 
-    >>> from binf690.hw7 import simp4, simp5, trap, romb
+    >>> from binf690.hw7 import simp, trap, romb
 
 Simpson Rule with :math:`n=4`:
 
-    >>> simp4(a=-3, b=5, n=4)
+    >>> simp(a=-3, b=5, n=4)
     a=-3 b=5 n=4 method=simpson
     result=2056.000
 
 Simpson Rule with :math:`n=5`:
 
-    >>> simp5(a=-3, b=5, n=5)
+    >>> simp(a=-3, b=5, n=5)
     a=-3 b=5 n=5 method=simpson
     result=2056.000
 
