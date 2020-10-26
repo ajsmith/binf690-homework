@@ -36,6 +36,12 @@ def romberg(f, a, b, n1, n2):
     """Return the integral of a function using Romberg method."""
     x1 = sample_space(a, b, n1)
     x2 = sample_space(a, b, n2)
+    h1 = calc_h(a, b, n1)
+    h2 = calc_h(a, b, n2)
+    i1 = trapezoidal(f, x1, h1)
+    i2 = trapezoidal(f, x2, h2)
+    result = i2 + (i2 - i1) / ((h1 / h2)**2 - 1)
+    return result
 
 
 def simpson38(f, x, h):

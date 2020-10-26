@@ -10,7 +10,7 @@ Fall 2020
 import matplotlib.pyplot as plt
 import numpy as np
 
-from binf690.integration import integral
+from binf690.integration import integral, romberg
 
 
 def f(x):
@@ -55,7 +55,7 @@ def trap(f=f, a=0, b=1, n=1):
     print_result(a, b, n, method, result)
 
 
-def romb(f=f, a=0, b=1, n=1):
-    method = 'romberg'
-    result = integral(f, a, b, n, method=method)
-    print_result(a, b, n, method, result)
+def romb(f=f, a=0, b=1, n1=1, n2=2):
+    result = romberg(f, a, b, n1, n2)
+    print(f'a={a} b={b} n1={n1} n2={n2} method=romberg')
+    print(f'result={result:.3f}')

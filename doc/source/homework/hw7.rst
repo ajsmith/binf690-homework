@@ -63,6 +63,10 @@ Solving for the definite integral:
 Numerical Solutions
 ~~~~~~~~~~~~~~~~~~~
 
+In comparison to the Analytical method, the Simpson and Romberg
+methods seem accurate. The Trapezoidal method has significant error
+however.
+
     >>> from binf690.hw7 import simp4, simp5, trap, romb
 
 Simpson Rule with :math:`n=4`:
@@ -83,11 +87,11 @@ Trapezoidal Rule with :math:`n=5`:
     a=-3 b=5 n=5 method=trapezoidal
     result=2219.840
 
-Romberg Rule with :math:`n=5`:
+Romberg Rule with :math:`n1=5` and :math:`n2=10`:
 
-    >>> romb(a=-3, b=5, n=5)
-    a=-3 b=5 n=5 method=romberg
-    result=8792.0
+    >>> romb(a=-3, b=5, n1=5, n2=10)
+    a=-3 b=5 n1=5 n2=10 method=romberg
+    result=2056.000
 
 
 Part B
