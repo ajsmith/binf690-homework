@@ -1,4 +1,4 @@
-"""Homework 6
+"""Homework 7
 
 Alexander Smith
 BINF690
