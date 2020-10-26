@@ -32,30 +32,30 @@ def plot_hw7a(filename=None):
         plt.savefig(filename)
 
 
-def print_result(a, b, n, h, method, result):
-    print(f'a={a} b={b} n={n} h={h} method={method}')
+def print_result(a, b, n, method, result):
+    print(f'a={a} b={b} n={n} method={method}')
     print(f'result={result:.3f}')
 
 
 def simp4(f=f, a=0, b=1, n=1):
     method = 'simpson'
-    (result, h) = integral(f, a, b, n, method=method)
-    print_result(a, b, n, h, method, result)
+    result = integral(f, a, b, n, method=method)
+    print_result(a, b, n, method, result)
 
 
 def simp5(f=f, a=0, b=1, n=1):
     method = 'simpson'
-    (result, h) = integral(f, a, b, n, method=method)
-    print_result(a, b, n, h, method, result)
+    result = integral(f, a, b, n, method=method)
+    print_result(a, b, n, method, result)
 
 
 def trap(f=f, a=0, b=1, n=1):
     method = 'trapezoidal'
-    (result, h) = integral(f, a, b, n, method=method)
-    print_result(a, b, n, h, method, result)
+    result = integral(f, a, b, n, method=method)
+    print_result(a, b, n, method, result)
 
 
 def romb(f=f, a=0, b=1, n=1):
     method = 'romberg'
-    (result, h) = integral(f, a, b, n, method=method)
-    print_result(a, b, n, h, method, result)
+    result = integral(f, a, b, n, method=method)
+    print_result(a, b, n, method, result)

@@ -68,25 +68,25 @@ Numerical Solutions
 Simpson Rule with :math:`n=4`:
 
     >>> simp4(a=-3, b=5, n=4)
-    a=-3 b=5 n=4 h=2.0 method=simpson
+    a=-3 b=5 n=4 method=simpson
     result=2056.000
 
 Simpson Rule with :math:`n=5`:
 
     >>> simp5(a=-3, b=5, n=5)
-    a=-3 b=5 n=5 h=1.6 method=simpson
-    result=2651.695
+    a=-3 b=5 n=5 method=simpson
+    result=2056.000
 
 Trapezoidal Rule with :math:`n=5`:
 
     >>> trap(a=-3, b=5, n=5)
-    a=-3 b=5 n=5 h=1.6 method=trapezoidal
+    a=-3 b=5 n=5 method=trapezoidal
     result=2219.840
 
 Romberg Rule with :math:`n=5`:
 
     >>> romb(a=-3, b=5, n=5)
-    a=-3 b=5 n=5 h=1.6 method=romberg
+    a=-3 b=5 n=5 method=romberg
     result=8792.0
 
 
