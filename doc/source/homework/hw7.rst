@@ -102,3 +102,13 @@ Part B
 
 Compute the integral for the 3rd order interpolating polynomial from
 the derivation of 1/3 Simpson method done in the class.
+
+..  math::
+
+    \int_{0}^{2} \alpha (\alpha - 1) (\alpha - 2) d\alpha = 0
+
+
+Solution
+--------
+
+See attached handwritten proof.
