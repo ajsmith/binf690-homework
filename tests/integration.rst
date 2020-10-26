@@ -19,5 +19,11 @@ The `is_odd()` helper function checks whether an integer is odd.
 The `pairs()` helper returns the items in a list grouped as pairs.
 
     >>> from binf690.integration import pairs
+    >>> list(pairs([]))
+    []
+    >>> list(pairs(range(1)))
+    []
     >>> list(pairs(range(10)))
     [(0, 1), (2, 3), (4, 5), (6, 7), (8, 9)]
+    >>> list(pairs(range(9)))
+    [(0, 1), (2, 3), (4, 5), (6, 7)]

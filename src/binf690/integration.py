@@ -40,7 +40,7 @@ def simpson38(y, h):
 def simpson13(y, h):
     result = y[0]
     result += sum(4 * y1 + 2 * y2 for (y1, y2) in pairs(y[1:-2]))
-    result += 4 * y[-2] + 2 * y[-1]
+    result += 4 * y[-2] + y[-1]
     result = h * result / 3.0
     return result
 
@@ -92,7 +92,7 @@ def integral(f, a, b, n, method='simpson'):
     int_func = int_methods[method]
 
     h = calc_h(a, b, n)
-    x = range(n + 1)
+    x = np.linspace(a, b, n + 1)
     y = [f(xi) for xi in x]
     result = int_func(y, h)
     return (result, h)

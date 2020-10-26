@@ -67,21 +67,21 @@ Numerical Solutions
 
 Simpson Rule with :math:`n=4`:
 
-    >>> simp4(a=-3, b=5, n=5)
-    a=-3 b=5 n=5 h=1.6 method=simpson
-    result=11747.200
+    >>> simp4(a=-3, b=5, n=4)
+    a=-3 b=5 n=4 h=2.0 method=simpson
+    result=2056.000
 
 Simpson Rule with :math:`n=5`:
 
     >>> simp5(a=-3, b=5, n=5)
     a=-3 b=5 n=5 h=1.6 method=simpson
-    result=11747.200
+    result=2651.695
 
 Trapezoidal Rule with :math:`n=5`:
 
-    >>> import pdb; pdb.set_trace(); trap(a=-3, b=5, n=1000)
+    >>> trap(a=-3, b=5, n=5)
     a=-3 b=5 n=5 h=1.6 method=trapezoidal
-    result=8792.000
+    result=2219.840
 
 Romberg Rule with :math:`n=5`:
 
