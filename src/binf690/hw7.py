@@ -10,7 +10,7 @@ Fall 2020
 import matplotlib.pyplot as plt
 import numpy as np
 
-from binf690.integration import integral, romberg
+from binf690.integration import romberg, simpson, trapezoidal
 
 
 def f(x):
@@ -38,15 +38,13 @@ def print_result(a, b, n, method, result):
 
 
 def simp(f=f, a=0, b=1, n=1):
-    method = 'simpson'
-    result = integral(f, a, b, n, method=method)
-    print_result(a, b, n, method, result)
+    result = simpson(f, a, b, n)
+    print_result(a, b, n, 'simpson', result)
 
 
 def trap(f=f, a=0, b=1, n=1):
-    method = 'trapezoidal'
-    result = integral(f, a, b, n, method=method)
-    print_result(a, b, n, method, result)
+    result = trapezoidal(f, a, b, n)
+    print_result(a, b, n, 'trapezoidal', result)
 
 
 def romb(f=f, a=0, b=1, n1=1, n2=2):

@@ -18,13 +18,19 @@ def calc_h(a, b, n):
     return float(b - a) / n
 
 
+def setup_vars(a, b, n):
+    x = sample_space(a, b, n)
+    h = calc_h(a, b, n)
+    return (x, h)
+
+
 def trapezoidal_single(h, y1, y2):
     return h * (y2 + y1) / 2.0
 
 
-def trapezoidal(f, x, h):
+def trapezoidal(f, a, b, n):
     """Return the integral of a function using Trapezoidal method."""
-    assert len(x) > 1, 'Need at least two points!'
+    x, h = setup_vars(a, b, n)
     y = [f(xi) for xi in x]
     result = y[0] + y[-1]
     result += 2 * sum(y[1:-1])
@@ -34,12 +40,10 @@ def trapezoidal(f, x, h):
 
 def romberg(f, a, b, n1, n2):
     """Return the integral of a function using Romberg method."""
-    x1 = sample_space(a, b, n1)
-    x2 = sample_space(a, b, n2)
     h1 = calc_h(a, b, n1)
     h2 = calc_h(a, b, n2)
-    i1 = trapezoidal(f, x1, h1)
-    i2 = trapezoidal(f, x2, h2)
+    i1 = trapezoidal(f, a, b, n1)
+    i2 = trapezoidal(f, a, b, n2)
     result = i2 + (i2 - i1) / ((h1 / h2)**2 - 1)
     return result
 
@@ -76,35 +80,16 @@ def pairs(x):
             break
 
 
-def simpson(f, x, h):
+def simpson(f, a, b, n):
     """Return the integral of a function using Simpson method."""
-    n = len(x) - 1
     result = 0
     if n == 1:
-        result = trapezoidal(f, x, h)
+        result = trapezoidal(f, a, b, n)
     elif n > 1:
+        x, h = setup_vars(a, b, n)
         if is_odd(n):
             result = simpson38(f, x[:4], h)
             x = x[3:]
         if len(x) > 0:
             result += simpson13(f, x, h)
-    return result
-
-
-def integration_methods():
-    return {
-        'trapezoidal': trapezoidal,
-        'simpson': simpson,
-        'romberg': romberg,
-    }
-
-
-def integral(f, a, b, n, method='simpson'):
-    int_methods = integration_methods()
-    assert method in int_methods, f'Unknown integral method: {method}'
-    int_func = int_methods[method]
-
-    x = sample_space(a, b, n)
-    h = calc_h(a, b, n)
-    result = int_func(f, x, h)
     return result
