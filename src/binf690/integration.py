@@ -18,10 +18,11 @@ def calc_h(a, b, n):
     return float(b - a) / n
 
 
-def setup_vars(a, b, n):
+def setup_vars(f, a, b, n):
     x = sample_space(a, b, n)
+    y = [f(xi) for xi in x]
     h = calc_h(a, b, n)
-    return (x, h)
+    return (x, y, h)
 
 
 def trapezoidal_single(h, y1, y2):
@@ -30,8 +31,7 @@ def trapezoidal_single(h, y1, y2):
 
 def trapezoidal(f, a, b, n):
     """Return the integral of a function using Trapezoidal method."""
-    x, h = setup_vars(a, b, n)
-    y = [f(xi) for xi in x]
+    x, y, h = setup_vars(f, a, b, n)
     result = y[0] + y[-1]
     result += 2 * sum(y[1:-1])
     result *= h / 2.0
@@ -48,13 +48,12 @@ def romberg(f, a, b, n1, n2):
     return result
 
 
-def simpson38(f, x, h):
-    y0, y1, y2, y3 = [f(xi) for xi in x]
+def simpson38(f, y, h):
+    y0, y1, y2, y3 = y
     return 3 * h * (y0 + 3 * y1 + 3 * y2 + y3) / 8.0
 
 
-def simpson13(f, x, h):
-    y = [f(xi) for xi in x]
+def simpson13(f, y, h):
     result = y[0]
     result += sum(4 * y1 + 2 * y2 for (y1, y2) in pairs(y[1:-2]))
     result += 4 * y[-2] + y[-1]
@@ -86,10 +85,10 @@ def simpson(f, a, b, n):
     if n == 1:
         result = trapezoidal(f, a, b, n)
     elif n > 1:
-        x, h = setup_vars(a, b, n)
+        x, y, h = setup_vars(f, a, b, n)
         if is_odd(n):
-            result = simpson38(f, x[:4], h)
-            x = x[3:]
-        if len(x) > 0:
-            result += simpson13(f, x, h)
+            result = simpson38(f, y[:4], h)
+            y = y[3:]
+        if len(y) > 0:
+            result += simpson13(f, y, h)
     return result
