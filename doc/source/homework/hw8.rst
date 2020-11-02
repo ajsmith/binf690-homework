@@ -40,8 +40,9 @@ For full source code, see `hw8.py` and `ode.py` in the
 ..  plot::
     :include-source:
 
-    >>> from binf690.hw8 import plot_all
+    >>> from binf690.hw8 import plot_all, plot_2x2
     >>> plot_all()
+    >>> plot_2x2()
 
 
 Heun without corrector
@@ -54,12 +55,6 @@ Heun without corrector
     i: 20  x: 2.0  y: 2.668  h: 0.1
     i: 30  x: 3.0  y: 3.620  h: 0.1
 
-..  plot::
-    :include-source:
-
-    >>> from binf690.hw8 import plot_euler
-    >>> plot_euler()
-
 
 Heun with corrector
 -------------------
@@ -70,12 +65,6 @@ Heun with corrector
     i: 10  x: 1.0  y: 1.197  h: 0.1
     i: 20  x: 2.0  y: 2.877  h: 0.1
     i: 30  x: 3.0  y: 3.788  h: 0.1
-
-..  plot::
-    :include-source:
-
-    >>> from binf690.hw8 import plot_heun
-    >>> plot_heun()
 
 
 Ralston's 2nd Order RK Method
@@ -88,12 +77,6 @@ Ralston's 2nd Order RK Method
     i: 20  x: 2.0  y: 2.878  h: 0.1
     i: 30  x: 3.0  y: 3.788  h: 0.1
 
-..  plot::
-    :include-source:
-
-    >>> from binf690.hw8 import plot_ralston
-    >>> plot_ralston()
-
 
 4th Order RK Method
 -------------------
@@ -104,9 +87,3 @@ Ralston's 2nd Order RK Method
     i: 10  x: 1.0  y: 1.196  h: 0.1
     i: 20  x: 2.0  y: 2.883  h: 0.1
     i: 30  x: 3.0  y: 3.793  h: 0.1
-
-..  plot::
-    :include-source:
-
-    >>> from binf690.hw8 import plot_rkm4
-    >>> plot_rkm4()
