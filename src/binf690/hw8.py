@@ -40,19 +40,9 @@ def solve_euler():
     display_results(result)
 
 
-def plot_euler(filename=None):
-    result = solve(euler, dydt, **initial_args)
-    _plot(result, 'Heun without corrector', filename)
-
-
 def solve_heun():
     result = solve(heun, dydt, **initial_args)
     display_results(result)
-
-
-def plot_heun(filename=None):
-    result = solve(heun, dydt, **initial_args)
-    _plot(result, 'Heun with corrector', filename)
 
 
 def solve_ralston():
@@ -60,19 +50,9 @@ def solve_ralston():
     display_results(result)
 
 
-def plot_ralston(filename=None):
-    result = solve(ralston, dydt, **initial_args)
-    _plot(result, 'Ralston 2nd Order Runge-Kutta Method', filename)
-
-
 def solve_rkm4():
     result = solve(rkm4, dydt, **initial_args)
     display_results(result)
-
-
-def plot_rkm4(filename=None):
-    result = solve(rkm4, dydt, **initial_args)
-    _plot(result, 'Classical 4th Order Runge-Kutta Method', filename)
 
 
 def get_plot_vars(result):
@@ -80,18 +60,6 @@ def get_plot_vars(result):
     xs = list(x for (_, x, _, _) in result)
     ys = list(y for (_, _, y, _) in result)
     return xs, ys
-
-
-def _plot(result, title, filename=None):
-    xs, ys = get_plot_vars(result)
-
-    plt.plot(xs, ys, 'b-o', ms=3, label='f(t)')
-    plt.xlabel('t')
-    plt.ylabel('y')
-    plt.title(title)
-
-    if filename:
-        plt.savefig(filename)
 
 
 def plot_all(filename=None):
