@@ -22,6 +22,7 @@ BINF690 Numerical Methods
     homework/hw5
     homework/hw6
     homework/hw7
+    homework/hw8
     implementations
 
 

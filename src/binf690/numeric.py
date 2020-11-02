@@ -12,3 +12,7 @@ def machine_epsilon():
 
 
 eps = machine_epsilon()
+
+
+def is_int(x):
+    return abs(x - int(x)) < eps
