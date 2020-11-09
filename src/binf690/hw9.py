@@ -31,4 +31,4 @@ def hw9():
 
     eig_min, eig_vec = eigen_min(A)
     print(f'Lowest Eigen Value: {eig_min:.3f}')
-    print('Eigen Vector:', eig_vec, 3)
+    print('Eigen Vector:', eig_vec)

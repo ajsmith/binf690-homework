@@ -43,4 +43,5 @@ def eigen_max(m, h=1):
 
 def eigen_min(m, h=1):
     """Compute the lowest eigen value and corresponding eigen vector."""
-    return power_method(inv(m.copy()), h=h)
+    eig_val, eig_vec = power_method(inv(m.copy()), h=h)
+    return (1.0 / eig_val, eig_vec)

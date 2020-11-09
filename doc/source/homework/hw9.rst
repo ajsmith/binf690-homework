@@ -25,5 +25,5 @@ For full source code, see `hw9.py` and `eigen.py` in the
      [10.  5.  7.]]
     Highest Eigen Value: 19.884
     Eigen Vector: [0.90351093 0.76982534 1.        ]
-    Lowest Eigen Value: 3.399
+    Lowest Eigen Value: 0.294
     Eigen Vector: [ 0.0411696   1.         -0.80702253]
