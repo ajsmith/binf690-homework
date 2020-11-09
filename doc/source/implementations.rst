@@ -21,6 +21,12 @@ Implementations
 ..  literalinclude:: ../../src/binf690/hw8.py
     :caption: src/binf690/hw8.py
 
+..  literalinclude:: ../../src/binf690/hw9.py
+    :caption: src/binf690/hw9.py
+
+..  literalinclude:: ../../src/binf690/eigen.py
+    :caption: src/binf690/eigen.py
+
 ..  literalinclude:: ../../src/binf690/gaussian.py
     :caption: src/binf690/gaussian.py
 
