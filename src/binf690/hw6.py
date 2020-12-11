@@ -10,7 +10,7 @@ Fall 2020
 import matplotlib.pyplot as plt
 import numpy as np
 
-from binf690.interpolation import NewtonPolynomial, RecursiveNewtonPolynomial
+from binf690.interpolation import RecursiveFDD
 from binf690.regression import LinearRegression, PolynomialRegression
 
 
@@ -39,11 +39,11 @@ class Homework6B:
         # self.X = X or [1.6, 2, 2.5, 3.2, 4]
         # self.Y = Y or [2, 8, 14, 15, 8]
         # self.error_point = (4.5, 2)
-        self.newton = NewtonPolynomial(self.X, self.Y)
+        self.newton = RecursiveFDD(list(zip(self.X, self.Y)))
 
 
     def print_solution(self):
-        yn, ea = self.newton.interpolate(2.8)
+        yn = self.newton(2.8)
         print('X:', ' '.join(f'{x:.1f}' for x in self.X))
         print('Y:', ' '.join(f'{y:.1f}' for y in self.Y))
         # print(f'Error Point: {self.error_point}')
@@ -82,7 +82,7 @@ def hw6b_plot():
     Y = list(hw.Y)
     plt.scatter(X, Y, c='k')
     xi = 2.8
-    (yi, _) = hw.newton.interpolate(xi)
+    yi = hw.newton(xi)
     # plt.plot(X, Y, 'b')
     plt.scatter(np.array([xi], dtype=float), np.array([yi], dtype=float), c='r')
     X.append(xi)
