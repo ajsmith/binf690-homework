@@ -7,6 +7,10 @@ for bioinformatics. It also provides resources for instantiating a
 containerized development environment as well as automation for
 installing and running the project.
 
+None of the Docker or testing stuff was needed for this course, but
+the threat was made that we would have to reuse this code later in our
+academic careers, so I made an extra effort to make it maintainable.
+
 **Important: Do not use these resources if you are currently taking
 this course.**
 
