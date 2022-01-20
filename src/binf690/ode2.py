@@ -30,24 +30,16 @@ METHODS = {
 }
 
 
-def compute(ode_vec, yi_vec, xi=0, xf=1, dx=1, method='euler'):
-    xs = series(xi, xf, dx)
-    method = METHODS.get(method, euler)
-    i = 0
-    yield (i, xi, yi_vec, 0)
-    for x in xs[1:]:
-        i += 1
-        h = x - xi
-        y_vec = []
-        for (j, dydt) in enumerate(ode_vec):
-            y = method(dxdy, xi, yi_vec[j], yi_vec, h)
-            y_vec.append(y)
-        yield (i, x, y_vec, h)
-        xi, yi_vec = x, y_vec
-
-
 def solve(ode_vec, yi_vec, xi=0, xf=1, dx=1, method='euler'):
-    """Approximate a solution for dxdy."""
+    """Approximate a solution for the ODE system.
+
+    Returns a tuple of:
+      1. Step index (list)
+      2. Step lengths (list)
+      3. X values (list)
+      4. Y values (list of lists)
+
+    """
     assert len(ode_vec) == len(yi_vec), "Each ODE requires an initial value!"
 
     xs = series(xi, xf, dx)
@@ -73,7 +65,7 @@ def solve(ode_vec, yi_vec, xi=0, xf=1, dx=1, method='euler'):
 
 
 def draw(*args, filename=None, **kwargs):
-    """Approximate a solution for dxdy and draw it."""
+    """Approximate a solution for the ODE system and draw it."""
     solutions = solve(*args, **kwargs)
     x = solutions[2]
     ys = solutions[3]
@@ -86,6 +78,7 @@ def draw(*args, filename=None, **kwargs):
 
 
 def demo():
+    """Demonstrate the ODE solver with a sample system."""
     dy1 = lambda x, y1, y2, y3: -0.5 * y2
     dy2 = lambda x, y1, y2, y3: y1
     dy3 = lambda x, y1, y2, y3: y2 - y1
